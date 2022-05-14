@@ -39,12 +39,11 @@ class SigninViewModel(private val pref: UserPreference): ViewModel() {
                     }
                 } else {
                     _isLoading.value = false
-                    val jsonObject = JSONObject(response.errorBody()!!.charStream().readText())
                     _response.value =
                         SigninResponse(
                             null,
-                            jsonObject.getBoolean("error"),
-                            jsonObject.getString("message")
+                            response.body()!!.error,
+                            response.body()!!.message
                         )
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
