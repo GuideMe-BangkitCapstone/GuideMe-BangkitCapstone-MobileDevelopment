@@ -8,12 +8,12 @@ import kotlinx.android.parcel.Parcelize
 data class SigninResponse(
 
 	@field:SerializedName("loginResult")
-	val loginResult: Users? = null,
+	val loginResult: User?,
 
 	@field:SerializedName("error")
-	val error: Boolean? = null,
+	val error: Boolean,
 
 	@field:SerializedName("message")
-	val message: String? = null
+	val message: String
 ) : Parcelable
 
