@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         navigation()
+        setupViewModel()
     }
 
     private fun setupViewModel(){

@@ -9,9 +9,6 @@ import android.os.Looper
 import android.view.WindowManager
 import com.capstone.guideme.MainActivity
 import com.capstone.guideme.R
-import com.capstone.guideme.ui.signin.SigninActivity
-import com.capstone.guideme.ui.signup.SignupActivity
-import com.capstone.guideme.ui.welcome.WelcomeActivity
 
 @SuppressLint("CustomSplashScreen")
 @Suppress("DEPRECATION")
