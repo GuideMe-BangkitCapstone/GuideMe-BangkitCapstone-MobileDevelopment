@@ -9,7 +9,7 @@ interface ApiServices {
     @FormUrlEncoded
     @POST("auth/register")
     fun signUp(
-        @Field("name") name: String,
+        @Field("fullname") fullname: String,
         @Field("email") email: String,
         @Field("password") password: String
     ): Call<SignupResponse>

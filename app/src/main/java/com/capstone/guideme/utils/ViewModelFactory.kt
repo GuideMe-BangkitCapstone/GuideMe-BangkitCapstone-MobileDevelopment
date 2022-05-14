@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.guideme.MainViewModel
+import com.capstone.guideme.ui.notifications.NotificationsViewModel
 import com.capstone.guideme.ui.signin.SigninViewModel
 import com.capstone.guideme.ui.signup.SignupViewModel
 

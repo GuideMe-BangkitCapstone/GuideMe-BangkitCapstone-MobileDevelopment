@@ -21,4 +21,6 @@
     <string name="name">Name</string>
     <string name="image">image</string>
     <string name="popular_places">Popular places</string>
+    <string name="change_language">Change Language</string>
+    <string name="logout">Logout</string>
 </resources>

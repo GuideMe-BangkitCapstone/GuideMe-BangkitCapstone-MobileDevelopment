@@ -19,9 +19,6 @@ data class User(
     @field:SerializedName("token")
     val token: String,
 
-    @field:SerializedName("username")
-    val username: String,
-
     @field:SerializedName("isLogin")
     val isLogin: Boolean
 ) : Parcelable
