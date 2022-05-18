@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
+import androidx.annotation.StringRes
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
@@ -28,16 +29,13 @@ class MainActivity : AppCompatActivity() {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setupViewModel()
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        navigation()
-        setupViewModel()
     }
 
-    private fun setupViewModel(){
+    private fun setupViewModel() {
         val pref = UserPreference.getInstance(dataStore)
         mainViewModel = ViewModelProvider(
             this,
@@ -46,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.getUser().observe(this) {
             if (it.isLogin) {
-
+                navigation()
             } else {
                 startActivity(Intent(this, WelcomeActivity::class.java))
                 finish()
@@ -77,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun navigation(){
+    private fun navigation() {
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
         val appBarConfiguration = AppBarConfiguration(

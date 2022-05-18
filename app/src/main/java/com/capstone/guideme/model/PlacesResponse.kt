@@ -2,19 +2,19 @@ package com.capstone.guideme.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class PlacesResponse(
 
 	@field:SerializedName("listPlaces")
-	val listPlaces: List<ListPlacesItem?>? = null,
+	val listPlaces: List<ListPlacesItem>? = null,
 
 	@field:SerializedName("error")
-	val error: Boolean? = null,
+	val error: Boolean,
 
 	@field:SerializedName("message")
-	val message: String? = null
+	val message: String
 ) : Parcelable
 
 @Parcelize

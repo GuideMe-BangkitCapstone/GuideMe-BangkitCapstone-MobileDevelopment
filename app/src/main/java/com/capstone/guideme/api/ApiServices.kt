@@ -1,5 +1,6 @@
 package com.capstone.guideme.api
 
+import com.capstone.guideme.model.PlacesResponse
 import com.capstone.guideme.model.SigninResponse
 import com.capstone.guideme.model.SignupResponse
 import retrofit2.Call
@@ -21,5 +22,7 @@ interface ApiServices {
         @Field("password") password: String
     ): Call<SigninResponse>
 
+    @GET("get/allplaces")
+    fun findAllPlaces(): Call<PlacesResponse>
 
 }
