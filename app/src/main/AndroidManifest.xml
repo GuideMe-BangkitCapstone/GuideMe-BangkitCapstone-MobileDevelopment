@@ -4,30 +4,34 @@
     package="com.capstone.guideme">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GuideMe"
+        android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity
+            android:name=".ui.preview.PreviewActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".ui.signin.SigninActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ui.signup.SignupActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name=".utils.SplashScreen"
             android:exported="true"

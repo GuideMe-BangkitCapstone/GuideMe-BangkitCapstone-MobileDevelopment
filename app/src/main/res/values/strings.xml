@@ -23,4 +23,6 @@
     <string name="popular_places">Popular places</string>
     <string name="change_language">Change Language</string>
     <string name="logout">Logout</string>
+    <string name="scan_image">Scan Image</string>
+    <string name="imgDesc">ImageDescription</string>
 </resources>
