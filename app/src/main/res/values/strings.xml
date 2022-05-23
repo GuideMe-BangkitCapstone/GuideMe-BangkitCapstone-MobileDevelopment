@@ -27,4 +27,6 @@
     <string name="imgDesc">ImageDescription</string>
     <string name="profile">Profile</string>
     <string name="camera">Camera</string>
+    <string name="clear_history">Clear History</string>
+    <string name="history">History</string>
 </resources>

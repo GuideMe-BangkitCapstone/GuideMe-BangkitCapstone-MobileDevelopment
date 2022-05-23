@@ -3,13 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/button_rounded.xml" value="0.2485" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/button_transparent.xml" value="0.2485" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/custom_cardview.xml" value="0.2485" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/edittext_rounded.xml" value="0.2555" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/gradient.xml" value="0.1" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_baseline_camera_24.xml" value="0.2555" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_baseline_cameraswitch_24.xml" value="0.2555" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.2485" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2555" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2555" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/selector.xml" value="0.2485" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_camera.xml" value="0.264" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_detail.xml" value="0.264" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_main.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_preview.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_signin.xml" value="0.10989583333333333" />
@@ -17,6 +23,9 @@
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_welcome.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/fragment_home.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/fragment_notifications.xml" value="0.1403985507246377" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/item_row_article.xml" value="0.536" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/item_row_history.xml" value="0.4" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/item_row_place.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/menu/option_menu.xml" value="0.2" />

@@ -1,21 +1,16 @@
 package com.capstone.guideme.ui.notifications
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.capstone.guideme.databinding.FragmentNotificationsBinding
-import com.capstone.guideme.utils.UserPreference
+import com.capstone.guideme.databinding.FragmentProfileBinding
 
 
-class NotificationsFragment : Fragment() {
-    private var _binding: FragmentNotificationsBinding? = null
+class ProfileFragment : Fragment() {
+    private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,9 +20,9 @@ class NotificationsFragment : Fragment() {
     ): View {
 
         val notificationsViewModel =
-            ViewModelProvider( this)[NotificationsViewModel::class.java]
+            ViewModelProvider( this)[ProfileViewModel::class.java]
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         return binding.root
     }

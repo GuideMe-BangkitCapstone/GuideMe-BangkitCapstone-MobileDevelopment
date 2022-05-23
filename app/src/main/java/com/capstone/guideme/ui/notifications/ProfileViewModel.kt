@@ -7,6 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.capstone.guideme.utils.UserPreference
 import kotlinx.coroutines.launch
 
-class NotificationsViewModel() : ViewModel() {
+class ProfileViewModel() : ViewModel() {
 
 }
