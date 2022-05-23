@@ -25,4 +25,6 @@
     <string name="logout">Logout</string>
     <string name="scan_image">Scan Image</string>
     <string name="imgDesc">ImageDescription</string>
+    <string name="profile">Profile</string>
+    <string name="camera">Camera</string>
 </resources>
