@@ -20,6 +20,11 @@ interface ApiServices {
         @Field("password") password: String
     ): Call<SigninResponse>
 
+    @GET("auth/getdetail")
+    fun getUserDetail(
+        @Query("user_id") userId: Int
+    ): Call<User>
+
     @GET("get/allplaces")
     fun findAllPlaces(): Call<PlacesResponse>
 

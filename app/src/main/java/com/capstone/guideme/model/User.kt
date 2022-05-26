@@ -11,7 +11,7 @@ data class User(
     val fullname: String,
 
     @field:SerializedName("userid")
-    val userid: String,
+    val userid: Int,
 
     @field:SerializedName("email")
     val email: String,

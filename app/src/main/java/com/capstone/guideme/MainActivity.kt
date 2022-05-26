@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.annotation.StringRes
@@ -18,6 +19,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.capstone.guideme.databinding.ActivityMainBinding
+import com.capstone.guideme.ui.profile.ProfileViewModel
 import com.capstone.guideme.ui.welcome.WelcomeActivity
 import com.capstone.guideme.utils.UserPreference
 import com.capstone.guideme.utils.ViewModelFactory
@@ -45,6 +47,11 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getUser().observe(this) {
             if (it.isLogin) {
                 navigation()
+                val userId = Bundle()
+                Log.e("mainAct", it.userid.toString())
+                Log.e("mainAct", it.token)
+                Log.e("mainAct", it.fullname)
+                userId.putString(EXTRA_USERID, it.userid.toString())
             } else {
                 startActivity(Intent(this, WelcomeActivity::class.java))
                 finish()
@@ -85,5 +92,8 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+    companion object{
+        const val EXTRA_USERID = "userId"
     }
 }
