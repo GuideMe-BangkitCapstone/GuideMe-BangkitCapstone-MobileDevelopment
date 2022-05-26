@@ -1,5 +1,6 @@
 package com.capstone.guideme.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.guideme.databinding.FragmentHomeBinding
 import com.capstone.guideme.model.ListPlacesItem
+import com.capstone.guideme.ui.detail.DetailActivity
 import java.util.ArrayList
 
 class HomeFragment : Fragment() {
@@ -50,13 +52,18 @@ class HomeFragment : Fragment() {
         binding.recyclerView.adapter = adapter
         adapter.setOnItemClickCallback(object : ListPlacesAdapter.OnItemClickCallback {
             override fun onItemClicked(data: ListPlacesItem) {
-                showUser(data)
+                showPlace(data)
             }
         })
     }
 
-    private fun showUser(data: ListPlacesItem) {
-
+    private fun showPlace(data: ListPlacesItem) {
+        activity?.let{
+            val intent = Intent (it, DetailActivity::class.java).apply {
+                putExtra(DetailActivity.EXTRA_NAME, data.name)
+            }
+            it.startActivity(intent)
+        }
     }
 
     override fun onDestroyView() {

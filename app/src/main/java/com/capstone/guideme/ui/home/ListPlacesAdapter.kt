@@ -24,7 +24,7 @@ class ListPlacesAdapter(private val places: ArrayList<ListPlacesItem>) :
         Glide.with(holder.itemView.context)
             .load(place.photoUrl)
             .into(holder.binding.imgItemPhoto)
-        holder.binding.tvPlaceName.text = place.name
+        holder.binding.tvNamePlace.text = place.name
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(place) }
     }
 

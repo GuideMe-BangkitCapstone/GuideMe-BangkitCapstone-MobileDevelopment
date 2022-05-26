@@ -5,17 +5,17 @@ import com.google.gson.annotations.SerializedName
 data class DetailPlacesResponse(
 
 	@field:SerializedName("address")
-	val address: String? = null,
+	val address: String,
 
 	@field:SerializedName("name")
-	val name: String? = null,
+	val name: String,
 
 	@field:SerializedName("description")
-	val description: String? = null,
+	val description: String,
 
 	@field:SerializedName("photo_url")
-	val photoUrl: String? = null,
+	val photoUrl: String,
 
 	@field:SerializedName("place_id")
-	val placeId: Int? = null
+	val placeId: Int
 )

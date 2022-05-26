@@ -1,8 +1,6 @@
 package com.capstone.guideme.api
 
-import com.capstone.guideme.model.PlacesResponse
-import com.capstone.guideme.model.SigninResponse
-import com.capstone.guideme.model.SignupResponse
+import com.capstone.guideme.model.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -25,4 +23,21 @@ interface ApiServices {
     @GET("get/allplaces")
     fun findAllPlaces(): Call<PlacesResponse>
 
+    @GET("get/place")
+    fun getDetailPlaces(
+        @Header("x-access-tokens") token: String,
+        @Query("name") name: String
+    ): Call<DetailPlacesResponse>
+
+    @GET("get/articles")
+    fun getDetailArticle(
+        @Header("x-access-tokens") token: String,
+        @Query("place_id") place_id: Int
+    ): Call<ArticleResponse>
+
+    @GET("get/albums")
+    fun getDetailAlbums(
+        @Header("x-access-tokens") token: String,
+        @Query("place_id") place_id: Int
+    ): Call<AlbumsResponse>
 }

@@ -5,23 +5,23 @@ import com.google.gson.annotations.SerializedName
 data class AlbumsResponse(
 
 	@field:SerializedName("listPhoto")
-	val listPhoto: List<ListPhotoItem?>? = null,
+	val listPhoto: List<ListPhotoItem>,
 
 	@field:SerializedName("error")
-	val error: Boolean? = null,
+	val error: Boolean,
 
 	@field:SerializedName("message")
-	val message: String? = null
+	val message: String
 )
 
 data class ListPhotoItem(
 
 	@field:SerializedName("photo_id")
-	val photoId: Int? = null,
+	val photoId: Int,
 
 	@field:SerializedName("photo_url")
-	val photoUrl: String? = null,
+	val photoUrl: String,
 
 	@field:SerializedName("place_id")
-	val placeId: Int? = null
+	val placeId: Int
 )

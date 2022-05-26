@@ -1,4 +1,4 @@
-package com.capstone.guideme.ui.notifications
+package com.capstone.guideme.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater

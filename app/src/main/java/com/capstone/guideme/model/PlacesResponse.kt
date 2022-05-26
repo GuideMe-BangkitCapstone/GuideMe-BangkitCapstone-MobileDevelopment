@@ -21,8 +21,8 @@ data class PlacesResponse(
 data class ListPlacesItem(
 
 	@field:SerializedName("name")
-	val name: String? = null,
+	val name: String,
 
 	@field:SerializedName("photo_url")
-	val photoUrl: String? = null
+	val photoUrl: String
 ) : Parcelable

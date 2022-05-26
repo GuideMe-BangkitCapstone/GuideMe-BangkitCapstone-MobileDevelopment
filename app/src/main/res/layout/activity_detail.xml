@@ -7,9 +7,10 @@
     tools:context=".ui.detail.DetailActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageView1"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,9 +40,10 @@
         app:layout_constraintGuide_begin="143dp" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
@@ -49,9 +51,10 @@
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toTopOf="@+id/guideline4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline5"
@@ -63,9 +66,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:textAlignment="textStart"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         tools:text="Candi Borobudur" />
@@ -78,11 +83,11 @@
         android:drawablePadding="10dp"
         android:maxLines="3"
         android:textStyle="bold"
+        app:drawableStartCompat="@drawable/ic_baseline_location_on_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDetailPlaceName"
-        tools:text="Jl. Badrawati, Kw. Candi Borobudur, Borobudur, Kec. Borobudur, Kabupaten Magelang, Jawa Tengah"
-        app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
+        tools:text="Jl. Badrawati, Kw. Candi Borobudur, Borobudur, Kec. Borobudur, Kabupaten Magelang, Jawa Tengah" />
 
     <TextView
         android:id="@+id/tvDescription"
@@ -90,26 +95,27 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:maxLines="6"
-        tools:text="Borobudur adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia. Candi ini terletak kurang lebih 100 km di sebelah barat daya Semarang, 86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut Yogyakarta."
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/tvAddress"
         app:layout_constraintStart_toStartOf="@+id/tvAddress"
-        app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+        tools:text="Borobudur adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia. Candi ini terletak kurang lebih 100 km di sebelah barat daya Semarang, 86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut Yogyakarta." />
 
     <TextView
         android:id="@+id/tvRelatedArticle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        tools:text="Related Article"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvDescription"
-        app:layout_constraintTop_toBottomOf="@+id/tvDescription" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        android:text="@string/related_article" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
@@ -117,5 +123,5 @@
         app:layout_constraintEnd_toEndOf="@+id/tvDescription"
         app:layout_constraintStart_toStartOf="@+id/tvDescription"
         app:layout_constraintTop_toBottomOf="@+id/tvRelatedArticle"
-        tools:listitem="@layout/item_row_article"/>
+        tools:listitem="@layout/item_row_article" />
 </androidx.constraintlayout.widget.ConstraintLayout>

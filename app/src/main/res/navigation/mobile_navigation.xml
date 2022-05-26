@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.capstone.guideme.ui.notifications.ProfileFragment"
+        android:name="com.capstone.guideme.ui.profile.ProfileFragment"
         android:label="@string/appTitle"
         tools:layout="@layout/fragment_profile" />
     <activity
