@@ -13,13 +13,15 @@
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_baseline_delete_forever_24.xml" value="0.2485" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2555" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2555" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/navigation_bar.xml" value="0.2545" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/drawable/selector.xml" value="0.2485" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_camera.xml" value="0.264" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_detail.xml" value="0.536" />
-        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_preview.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_signin.xml" value="0.10989583333333333" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_signup.xml" value="0.21693840579710144" />
+        <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/activity_welcome.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/fragment_home.xml" value="0.21693840579710144" />
         <entry key="..\:/GithubRepo/GuideMe-BangkitCapstone-MobileDevelopment/app/src/main/res/layout/fragment_notifications.xml" value="0.1403985507246377" />
