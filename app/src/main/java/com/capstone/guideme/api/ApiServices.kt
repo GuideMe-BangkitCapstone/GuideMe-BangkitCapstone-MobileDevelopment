@@ -45,4 +45,10 @@ interface ApiServices {
         @Header("x-access-tokens") token: String,
         @Query("place_id") place_id: Int
     ): Call<AlbumsResponse>
+
+    @GET("get/visithistory")
+    fun getUserHistory(
+        @Header("x-access-tokens") token: String,
+        @Query("user_id") user_id: Int
+    ): Call<HistoryResponse>
 }

@@ -17,6 +17,7 @@ import com.capstone.guideme.MainActivity
 import com.capstone.guideme.databinding.ActivitySigninBinding
 import com.capstone.guideme.utils.UserPreference
 import com.capstone.guideme.utils.ViewModelFactory
+import com.capstone.guideme.utils.showLoading
 
 class SigninActivity : AppCompatActivity() {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
@@ -48,7 +49,7 @@ class SigninActivity : AppCompatActivity() {
 
         signinViewModel.signInUser(email, password)
         signinViewModel.isLoading.observe(this) {
-//            showLoading(it, binding.viewLoading)
+            showLoading(it, binding.viewLoading)
         }
         signinViewModel.response.observe(this) {
             if (it.error) {

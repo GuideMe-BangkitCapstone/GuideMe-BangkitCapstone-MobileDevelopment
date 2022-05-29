@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.capstone.guideme.databinding.ActivitySignupBinding
 import com.capstone.guideme.utils.UserPreference
 import com.capstone.guideme.utils.ViewModelFactory
+import com.capstone.guideme.utils.showLoading
 
 class SignupActivity : AppCompatActivity() {
 
@@ -48,7 +49,7 @@ class SignupActivity : AppCompatActivity() {
 
         signupViewModel.signUpUser(fullname, email, password)
         signupViewModel.isLoading.observe(this) {
-//            showLoading(it, binding.viewLoading)
+            showLoading(it, binding.viewLoading)
         }
         signupViewModel.response.observe(this) {
             if (it.error) {

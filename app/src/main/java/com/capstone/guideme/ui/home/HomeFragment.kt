@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.capstone.guideme.databinding.FragmentHomeBinding
 import com.capstone.guideme.model.ListPlacesItem
 import com.capstone.guideme.ui.detail.DetailActivity
+import com.capstone.guideme.utils.showLoading
 import java.util.ArrayList
 
 class HomeFragment : Fragment() {
@@ -34,6 +35,9 @@ class HomeFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.title = "GuideMe"
 
         homeViewModel.findPlaces()
+        homeViewModel.isLoading.observe(viewLifecycleOwner){
+            showLoading(it, binding.viewLoading)
+        }
         homeViewModel.listPlaces.observe(viewLifecycleOwner) {
             setPlaces(it)
         }

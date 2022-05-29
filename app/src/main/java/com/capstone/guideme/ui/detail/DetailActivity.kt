@@ -18,6 +18,7 @@ import com.capstone.guideme.model.ListArticleItem
 import com.capstone.guideme.model.ListPhotoItem
 import com.capstone.guideme.utils.UserPreference
 import com.capstone.guideme.utils.ViewModelFactory
+import com.capstone.guideme.utils.showLoading
 
 
 class DetailActivity : AppCompatActivity() {
@@ -41,10 +42,13 @@ class DetailActivity : AppCompatActivity() {
             val name = intent.getStringExtra(EXTRA_NAME)!!
 
             detailViewModel.getDetailPlace(name, user.token)
+            detailViewModel.isLoading.observe(this){
+                showLoading(it, binding.viewLoading)
+            }
 
             detailViewModel.detailPlace.observe(this){ detail ->
                 setData(detail)
-                detailViewModel.getDetailAlbum(detail.placeId!!, user.token)
+                detailViewModel.getDetailAlbum(detail.placeId, user.token)
                 detailViewModel.getDetailArticle(detail.placeId, user.token)
             }
 
