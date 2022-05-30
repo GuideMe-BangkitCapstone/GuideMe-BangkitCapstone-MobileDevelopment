@@ -1,19 +1,14 @@
 package com.capstone.guideme.ui.preview
 
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.capstone.guideme.databinding.ActivityPreviewBinding
 import com.capstone.guideme.ui.camera.CameraActivity
 import com.capstone.guideme.utils.rotateBitmap
 import java.io.File
-import java.util.jar.Manifest
 
 class PreviewActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPreviewBinding
@@ -38,10 +33,12 @@ class PreviewActivity : AppCompatActivity() {
             val myFile = it.data?.getSerializableExtra("picture") as File
             val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
 
+//            val result =  BitmapFactory.decodeFile(myFile.path)
             val result = rotateBitmap(
                 BitmapFactory.decodeFile(myFile.path),
                 isBackCamera
             )
+
             binding.imageView.setImageBitmap(result)
         }
     }

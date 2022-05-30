@@ -131,6 +131,7 @@ class CameraActivity : AppCompatActivity() {
 
             imageCapture = ImageCapture.Builder().build()
 
+
             try {
                 cameraProvider.unbindAll()
                 cameraProvider.bindToLifecycle(
