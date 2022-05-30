@@ -18,6 +18,7 @@ import com.capstone.guideme.databinding.ActivityMainBinding
 import com.capstone.guideme.model.User
 import com.capstone.guideme.ui.camera.CameraActivity
 import com.capstone.guideme.ui.home.HomeFragment
+import com.capstone.guideme.ui.preview.PreviewActivity
 import com.capstone.guideme.ui.profile.ProfileFragment
 import com.capstone.guideme.ui.welcome.WelcomeActivity
 import com.capstone.guideme.utils.UserPreference
@@ -105,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.navigation_camera -> {
-                    val moveToCamera = Intent(this, CameraActivity::class.java)
+                    val moveToCamera = Intent(this, PreviewActivity::class.java)
                     startActivity(moveToCamera)
                     return@setOnNavigationItemSelectedListener false
                 }
