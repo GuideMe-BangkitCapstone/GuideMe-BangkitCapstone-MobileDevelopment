@@ -3,10 +3,11 @@ package com.capstone.guideme.ui.profile
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -23,6 +24,7 @@ class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
     private val profileViewModel by viewModels<ProfileViewModel>()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -55,6 +57,19 @@ class ProfileFragment : Fragment() {
             setHistory(it)
         }
 
+        binding.ClearHistoryButton.setOnClickListener{
+            AlertDialog.Builder(activity).apply {
+                setTitle("Delete Warning")
+                setMessage("Are you sure?")
+                setPositiveButton("Yes") { _, _ ->
+                    deleteHistory(userInfo.token, userInfo.userid)
+                }
+                create()
+                show()
+            }
+
+        }
+
         val binding = binding.recyclerView
         binding.layoutManager = LinearLayoutManager(activity)
     }
@@ -82,6 +97,18 @@ class ProfileFragment : Fragment() {
             }
         })
     }
+
+    private fun deleteHistory(token: String, userId: Int){
+        profileViewModel.deleteVisitHistory(token, userId)
+        profileViewModel.deleteResponse.observe(viewLifecycleOwner){
+            Toast.makeText(
+                activity,
+                it.message,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
 
     private fun showPlace(data: ListHistoryItem) {
         activity?.let{

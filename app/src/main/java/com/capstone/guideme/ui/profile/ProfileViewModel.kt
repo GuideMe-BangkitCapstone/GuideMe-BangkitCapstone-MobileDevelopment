@@ -17,6 +17,9 @@ class ProfileViewModel : ViewModel() {
     private val _userHistory = MutableLiveData<List<ListHistoryItem>>()
     val userHistory: LiveData<List<ListHistoryItem>> = _userHistory
 
+    private val _deleteResponse = MutableLiveData<DeleteResponse>()
+    val deleteResponse: LiveData<DeleteResponse> = _deleteResponse
+
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
@@ -60,6 +63,29 @@ class ProfileViewModel : ViewModel() {
                 }
             }
             override fun onFailure(call: Call<HistoryResponse>, t: Throwable) {
+                _isLoading.value = false
+                Log.e(TAG, "onFailure: ${t.message.toString()}")
+            }
+        })
+    }
+
+    fun deleteVisitHistory(token: String ,userId: Int) {
+        _isLoading.value = true
+        val client = ApiConfig.getApiService().deleteHistory(token ,userId)
+
+        client.enqueue(object : Callback<DeleteResponse> {
+            override fun onResponse(
+                call: Call<DeleteResponse>,
+                response: Response<DeleteResponse>
+            ) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    _deleteResponse.value = response.body()
+                } else {
+                    Log.e(TAG, "onFailure: ${response.message()}")
+                }
+            }
+            override fun onFailure(call: Call<DeleteResponse>, t: Throwable) {
                 _isLoading.value = false
                 Log.e(TAG, "onFailure: ${t.message.toString()}")
             }

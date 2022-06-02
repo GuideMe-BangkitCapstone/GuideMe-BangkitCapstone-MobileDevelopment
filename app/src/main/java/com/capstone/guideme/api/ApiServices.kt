@@ -1,6 +1,7 @@
 package com.capstone.guideme.api
 
 import com.capstone.guideme.model.*
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -51,4 +52,19 @@ interface ApiServices {
         @Header("x-access-tokens") token: String,
         @Query("user_id") user_id: Int
     ): Call<HistoryResponse>
+
+    @Multipart
+    @POST("detection/dummy/guideme")
+    fun detection(
+        @Header("x-access-tokens") token: String,
+        @Query("user_id") user_id: Int,
+        @Part file: MultipartBody.Part
+    ): Call<DetectionResponse>
+
+    @DELETE("get/deletehistory")
+    fun deleteHistory(
+        @Header("x-access-tokens") token: String,
+        @Query("user_id") user_id: Int
+    ): Call<DeleteResponse>
+
 }
