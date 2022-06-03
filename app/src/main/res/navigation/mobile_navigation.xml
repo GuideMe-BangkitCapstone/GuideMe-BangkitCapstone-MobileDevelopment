@@ -11,9 +11,6 @@
         android:label="@string/appTitle"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_detailActivity"
-            app:destination="@id/detailActivity" />
-        <action
             android:id="@+id/action_navigation_home_to_cameraActivity"
             app:destination="@id/cameraActivity" />
         <action
@@ -25,12 +22,11 @@
         android:id="@+id/navigation_profile"
         android:name="com.capstone.guideme.ui.profile.ProfileFragment"
         android:label="@string/appTitle"
-        tools:layout="@layout/fragment_profile" />
-    <activity
-        android:id="@+id/detailActivity"
-        android:name="com.capstone.guideme.ui.detail.DetailActivity"
-        android:label="activity_detail"
-        tools:layout="@layout/activity_detail" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
     <activity
         android:id="@+id/cameraActivity"
         android:name="com.capstone.guideme.ui.camera.CameraActivity"

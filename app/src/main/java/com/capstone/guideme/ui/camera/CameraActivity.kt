@@ -3,11 +3,9 @@ package com.capstone.guideme.ui.camera
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageCapture
 import androidx.camera.core.ImageCaptureException
@@ -15,7 +13,6 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.capstone.guideme.MainActivity
 import com.capstone.guideme.databinding.ActivityCameraBinding
 import com.capstone.guideme.ui.preview.PreviewActivity
 import com.capstone.guideme.utils.createFile

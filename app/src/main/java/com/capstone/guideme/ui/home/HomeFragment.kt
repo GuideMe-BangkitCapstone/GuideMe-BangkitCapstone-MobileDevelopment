@@ -41,12 +41,11 @@ class HomeFragment : Fragment() {
         homeViewModel.listPlaces.observe(viewLifecycleOwner) {
             setPlaces(it)
         }
-
-        val binding = binding.recyclerView
-        binding.layoutManager = LinearLayoutManager(activity)
     }
 
     private fun setPlaces(places: List<ListPlacesItem>) {
+        binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+
         val listPlace = ArrayList<ListPlacesItem>()
         for (place in places) {
             listPlace.clear()

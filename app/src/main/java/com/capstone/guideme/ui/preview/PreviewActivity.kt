@@ -49,10 +49,13 @@ class PreviewActivity : AppCompatActivity() {
             val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
 
             getFile = myFile
-            val result = rotateBitmap(
-                BitmapFactory.decodeFile(getFile?.path),
-                isBackCamera
-            )
+            val result =  BitmapFactory.decodeFile(myFile.path)
+
+//          FOR EMULATOR USER !
+//            val result = rotateBitmap(
+//                BitmapFactory.decodeFile(getFile?.path),
+//                isBackCamera
+//            )
 
             binding.imageView.setImageBitmap(result)
         }
@@ -93,8 +96,6 @@ class PreviewActivity : AppCompatActivity() {
                     finish()
                 }
             }
-        }else{
-            Log.e("test", "Kosong!")
         }
     }
 

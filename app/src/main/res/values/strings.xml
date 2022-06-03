@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">GuideMe</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_camera">Camera</string>
     <string name="appTitle">GuideMe</string>
     <string name="welcomeMsg">Hi, Welcome to GuideMe</string>
     <string name="WelcomeMsg2">Please Signin or Signup to use GuideMe</string>
@@ -25,8 +25,6 @@
     <string name="logout">Logout</string>
     <string name="scan_image">Scan Image</string>
     <string name="imgDesc">ImageDescription</string>
-    <string name="profile">Profile</string>
-    <string name="camera">Camera</string>
     <string name="clear_history">Clear History</string>
     <string name="history">History</string>
     <string name="related_article">Related Article</string>
