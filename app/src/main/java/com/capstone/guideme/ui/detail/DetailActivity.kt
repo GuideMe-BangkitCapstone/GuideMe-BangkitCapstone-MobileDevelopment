@@ -11,7 +11,6 @@ import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.capstone.guideme.MainViewModel
 import com.capstone.guideme.databinding.ActivityDetailBinding
 import com.capstone.guideme.model.DetailPlacesResponse
 import com.capstone.guideme.model.ListArticleItem
@@ -24,9 +23,7 @@ import com.capstone.guideme.utils.showLoading
 class DetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailBinding
     private lateinit var detailViewModel: DetailViewModel
-    private lateinit var mainViewModel: MainViewModel
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

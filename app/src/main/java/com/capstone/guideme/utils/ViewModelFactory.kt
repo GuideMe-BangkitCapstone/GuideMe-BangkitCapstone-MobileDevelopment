@@ -1,6 +1,5 @@
 package com.capstone.guideme.utils
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.capstone.guideme.MainViewModel
@@ -9,7 +8,7 @@ import com.capstone.guideme.ui.preview.PreviewViewModel
 import com.capstone.guideme.ui.signin.SigninViewModel
 import com.capstone.guideme.ui.signup.SignupViewModel
 
-class ViewModelFactory(private val pref: UserPreference, private val context: Context? = null) :
+class ViewModelFactory(private val pref: UserPreference) :
     ViewModelProvider.NewInstanceFactory() {
 
     @Suppress("UNCHECKED_CAST")

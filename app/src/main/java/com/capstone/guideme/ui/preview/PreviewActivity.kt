@@ -3,11 +3,10 @@ package com.capstone.guideme.ui.preview
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
@@ -15,7 +14,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.capstone.guideme.databinding.ActivityPreviewBinding
 import com.capstone.guideme.ui.camera.CameraActivity
 import com.capstone.guideme.ui.detail.DetailActivity
-import com.capstone.guideme.utils.*
+import com.capstone.guideme.utils.UserPreference
+import com.capstone.guideme.utils.ViewModelFactory
+import com.capstone.guideme.utils.reduceFileImage
+import com.capstone.guideme.utils.showLoading
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody

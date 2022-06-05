@@ -1,9 +1,8 @@
 package com.capstone.guideme.ui.welcome
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.capstone.guideme.R
+import androidx.appcompat.app.AppCompatActivity
 import com.capstone.guideme.databinding.ActivityWelcomeBinding
 import com.capstone.guideme.ui.signin.SigninActivity
 import com.capstone.guideme.ui.signup.SignupActivity
