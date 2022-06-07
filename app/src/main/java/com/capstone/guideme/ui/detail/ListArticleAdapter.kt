@@ -21,7 +21,6 @@ class ListArticleAdapter(private val article: ArrayList<ListArticleItem>) :
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val article = article[position]
-        Log.e("Disini", article.photoUrl)
         with(holder.binding){
             Glide.with(holder.itemView.context)
                 .load(article.photoUrl)

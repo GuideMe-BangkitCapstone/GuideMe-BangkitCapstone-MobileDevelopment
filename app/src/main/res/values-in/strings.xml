@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GuideMe</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_profile">Profil</string>
+    <string name="title_camera">Kamera</string>
+    <string name="appTitle">GuideMe</string>
+    <string name="welcomeMsg">Hi, Selamat Datang di GuideMe</string>
+    <string name="WelcomeMsg2">Silakan Masuk atau Daftar untuk menggunakan layanan GuideMe</string>
+    <string name="btnSignin">Masuk</string>
+    <string name="btnSignup">Daftar</string>
+    <string name="loginTitle">Masuk</string>
+    <string name="loginMsg">Silakan masuk untuk melanjutkan</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="emptyNameWarning">Masukan Nama</string>
+    <string name="emptyEmailWarning">Masukan Email</string>
+    <string name="validEmailWarning">Masukan Email Yang Valid</string>
+    <string name="emptyPasswordWarning">Masukan Password</string>
+    <string name="passwordWarning">Password Harus Lebih Dari 6 Character</string>
+    <string name="signupTitle">Daftar</string>
+    <string name="name">Nama</string>
+    <string name="image">Gambar</string>
+    <string name="popular_places">Tempat Populer</string>
+    <string name="change_language">Ganti Bahasa</string>
+    <string name="logout">Keluar</string>
+    <string name="scan_image">Pindai Gambar</string>
+    <string name="imgDesc">ImageDescription</string>
+    <string name="clear_history">Hapus Riwayat</string>
+    <string name="history">Riwayat</string>
+    <string name="related_article">Artikel Terkait</string>
+</resources>
