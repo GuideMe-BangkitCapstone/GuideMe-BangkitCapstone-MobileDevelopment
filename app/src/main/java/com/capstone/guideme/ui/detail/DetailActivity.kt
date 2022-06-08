@@ -35,29 +35,26 @@ class DetailActivity : AppCompatActivity() {
             ViewModelFactory(UserPreference.getInstance(dataStore))
         )[DetailViewModel::class.java]
 
-        detailViewModel.getUser().observe(this){ user ->
-            val name = intent.getStringExtra(EXTRA_NAME)!!
+        val name = intent.getStringExtra(EXTRA_NAME)!!
 
-            detailViewModel.getDetailPlace(name, user.token)
-            detailViewModel.isLoading.observe(this){
-                showLoading(it, binding.viewLoading)
-            }
-
-            detailViewModel.detailPlace.observe(this){ detail ->
-                setData(detail)
-                detailViewModel.getDetailAlbum(detail.placeId, user.token)
-                detailViewModel.getDetailArticle(detail.placeId, user.token)
-            }
-
-            detailViewModel.detailAlbums.observe(this){
-                setPhoto(it)
-            }
-
-            detailViewModel.detailArticle.observe(this){
-                setArticle(it)
-            }
+        detailViewModel.getDetailPlace(name)
+        detailViewModel.isLoading.observe(this) {
+            showLoading(it, binding.viewLoading)
         }
 
+        detailViewModel.detailPlace.observe(this) { detail ->
+            setData(detail)
+            detailViewModel.getDetailAlbum(detail.placeId)
+            detailViewModel.getDetailArticle(detail.placeId)
+        }
+
+        detailViewModel.detailAlbums.observe(this) {
+            setPhoto(it)
+        }
+
+        detailViewModel.detailArticle.observe(this) {
+            setArticle(it)
+        }
     }
 
     private fun setData(place: DetailPlacesResponse) {
@@ -89,7 +86,7 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setPhoto(photos: List<ListPhotoItem>) {
-        with(binding){
+        with(binding) {
             Glide.with(this@DetailActivity)
                 .load(photos[0].photoUrl)
                 .into(imageView1)

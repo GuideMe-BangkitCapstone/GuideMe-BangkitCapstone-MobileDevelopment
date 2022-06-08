@@ -29,9 +29,9 @@ class DetailViewModel(private val pref: UserPreference) : ViewModel() {
         return pref.getUser().asLiveData()
     }
 
-    internal fun getDetailPlace(name: String, token: String) {
+    internal fun getDetailPlace(name: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getDetailPlaces(token, name)
+        val client = ApiConfig.getApiService().getDetailPlaces(name)
         client.enqueue(object : Callback<DetailPlacesResponse> {
             override fun onResponse(
                 call: Call<DetailPlacesResponse>,
@@ -52,9 +52,9 @@ class DetailViewModel(private val pref: UserPreference) : ViewModel() {
         })
     }
 
-    internal fun getDetailAlbum(placeId: Int, token: String) {
+    internal fun getDetailAlbum(placeId: Int) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getDetailAlbums(token, placeId)
+        val client = ApiConfig.getApiService().getDetailAlbums(placeId)
         client.enqueue(object : Callback<AlbumsResponse> {
             override fun onResponse(
                 call: Call<AlbumsResponse>,
@@ -75,9 +75,9 @@ class DetailViewModel(private val pref: UserPreference) : ViewModel() {
         })
     }
 
-    internal fun getDetailArticle(placeId: Int, token: String) {
+    internal fun getDetailArticle(placeId: Int) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getDetailArticle(token, placeId)
+        val client = ApiConfig.getApiService().getDetailArticle(placeId)
         client.enqueue(object : Callback<ArticleResponse> {
             override fun onResponse(
                 call: Call<ArticleResponse>,

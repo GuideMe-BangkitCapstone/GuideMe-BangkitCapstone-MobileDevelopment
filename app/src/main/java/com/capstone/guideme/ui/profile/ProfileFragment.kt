@@ -42,10 +42,8 @@ class ProfileFragment : Fragment() {
         val activity: MainActivity? = activity as MainActivity?
         val userInfo: User = activity!!.getMyData()
 
-        profileViewModel.getUserDetail(
-            userInfo.userid
-        )
-        profileViewModel.getUserVisitHistory(userInfo.token, userInfo.userid)
+        profileViewModel.getUserDetail(userInfo.token)
+        profileViewModel.getUserVisitHistory(userInfo.token)
 
         profileViewModel.isLoading.observe(viewLifecycleOwner){
             showLoading(it, binding.viewLoading)
@@ -62,7 +60,7 @@ class ProfileFragment : Fragment() {
                 setTitle("Delete Warning")
                 setMessage("Are you sure?")
                 setPositiveButton("Yes") { _, _ ->
-                    deleteHistory(userInfo.token, userInfo.userid)
+                    deleteHistory(userInfo.token)
                 }
                 create()
                 show()
@@ -98,8 +96,8 @@ class ProfileFragment : Fragment() {
         })
     }
 
-    private fun deleteHistory(token: String, userId: Int){
-        profileViewModel.deleteVisitHistory(token, userId)
+    private fun deleteHistory(token: String){
+        profileViewModel.deleteVisitHistory(token)
         profileViewModel.deleteResponse.observe(viewLifecycleOwner){
             Toast.makeText(
                 activity,

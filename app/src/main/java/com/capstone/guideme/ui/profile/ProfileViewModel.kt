@@ -23,9 +23,9 @@ class ProfileViewModel : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun getUserDetail(userId: Int) {
+    fun getUserDetail(token: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getUserDetail(userId)
+        val client = ApiConfig.getApiService().getUserDetail("Bearer $token")
 
         client.enqueue(object : Callback<User> {
             override fun onResponse(
@@ -46,9 +46,9 @@ class ProfileViewModel : ViewModel() {
         })
     }
 
-    fun getUserVisitHistory(token: String ,userId: Int) {
+    fun getUserVisitHistory(token: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().getUserHistory(token ,userId)
+        val client = ApiConfig.getApiService().getUserHistory("Bearer $token")
 
         client.enqueue(object : Callback<HistoryResponse> {
             override fun onResponse(
@@ -69,9 +69,9 @@ class ProfileViewModel : ViewModel() {
         })
     }
 
-    fun deleteVisitHistory(token: String ,userId: Int) {
+    fun deleteVisitHistory(token: String) {
         _isLoading.value = true
-        val client = ApiConfig.getApiService().deleteHistory(token ,userId)
+        val client = ApiConfig.getApiService().deleteHistory("Bearer $token")
 
         client.enqueue(object : Callback<DeleteResponse> {
             override fun onResponse(

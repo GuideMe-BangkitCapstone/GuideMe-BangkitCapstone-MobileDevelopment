@@ -23,7 +23,7 @@ interface ApiServices {
 
     @GET("auth/getdetail")
     fun getUserDetail(
-        @Query("user_id") userId: Int
+        @Header("Authorization") token: String
     ): Call<User>
 
     @GET("get/allplaces")
@@ -31,40 +31,34 @@ interface ApiServices {
 
     @GET("get/place")
     fun getDetailPlaces(
-        @Header("x-access-tokens") token: String,
         @Query("name") name: String
     ): Call<DetailPlacesResponse>
 
     @GET("get/articles")
     fun getDetailArticle(
-        @Header("x-access-tokens") token: String,
         @Query("place_id") place_id: Int
     ): Call<ArticleResponse>
 
     @GET("get/albums")
     fun getDetailAlbums(
-        @Header("x-access-tokens") token: String,
         @Query("place_id") place_id: Int
     ): Call<AlbumsResponse>
 
     @GET("get/visithistory")
     fun getUserHistory(
-        @Header("x-access-tokens") token: String,
-        @Query("user_id") user_id: Int
+        @Header("Authorization") token: String
     ): Call<HistoryResponse>
 
     @Multipart
     @POST("detection/dummy/guideme")
     fun detection(
-        @Header("x-access-tokens") token: String,
-        @Query("user_id") user_id: Int,
+        @Header("Authorization") token: String,
         @Part file: MultipartBody.Part
     ): Call<DetectionResponse>
 
     @DELETE("get/deletehistory")
     fun deleteHistory(
-        @Header("x-access-tokens") token: String,
-        @Query("user_id") user_id: Int
+        @Header("Authorization") token: String,
     ): Call<DeleteResponse>
 
 }

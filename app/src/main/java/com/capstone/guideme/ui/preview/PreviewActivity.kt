@@ -76,7 +76,7 @@ class PreviewActivity : AppCompatActivity() {
             setupViewModel()
 
             previewViewModel.getUser().observe(this) {
-                previewViewModel.getDetection(it.token, it.userid, imageMultipart)
+                previewViewModel.getDetection(it.token, imageMultipart)
             }
 
             previewViewModel.isLoading.observe(this) {

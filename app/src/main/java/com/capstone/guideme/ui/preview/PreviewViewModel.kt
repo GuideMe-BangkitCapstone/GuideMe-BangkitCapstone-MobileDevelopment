@@ -28,12 +28,11 @@ class PreviewViewModel(private val pref: UserPreference) : ViewModel() {
 
     fun getDetection(
         token: String,
-        userId: Int,
         imageMultipart: MultipartBody.Part,
     ) {
         _isLoading.value = true
         val client = ApiConfig.getApiService()
-            .detection(token, userId,imageMultipart)
+            .detection("Bearer $token", imageMultipart)
         client.enqueue(object : Callback<DetectionResponse> {
             override fun onResponse(
                 call: Call<DetectionResponse>,
@@ -56,7 +55,7 @@ class PreviewViewModel(private val pref: UserPreference) : ViewModel() {
             }
 
             override fun onFailure(call: Call<DetectionResponse>, t: Throwable) {
-                Log.e("AddStoryActivity", "onFailure: ${t.message.toString()}")
+                Log.e("PreviewViewModel", "onFailure: ${t.message.toString()}")
             }
         })
     }
