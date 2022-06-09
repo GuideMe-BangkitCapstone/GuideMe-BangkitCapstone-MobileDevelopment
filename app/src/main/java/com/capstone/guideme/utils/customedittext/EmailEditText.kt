@@ -8,6 +8,7 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 import com.capstone.guideme.R
+import com.capstone.guideme.utils.isEmailValid
 
 
 class EmailEditText : AppCompatEditText {
@@ -38,6 +39,10 @@ class EmailEditText : AppCompatEditText {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (s.toString().isEmpty()) {
                     error = context.getString(R.string.emptyEmailWarning)
+                    requestFocus()
+                }
+                else if (!isEmailValid(s.toString())) {
+                    error = context.getString(R.string.validEmailWarning)
                     requestFocus()
                 }
             }

@@ -48,10 +48,10 @@ class PreviewActivity : AppCompatActivity() {
     ) {
         if (it.resultCode == CAMERA_X_RESULT) {
             val myFile = it.data?.getSerializableExtra("picture") as File
-            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
+//            val isBackCamera = it.data?.getBooleanExtra("isBackCamera", true) as Boolean
 
             getFile = myFile
-            val result =  BitmapFactory.decodeFile(myFile.path)
+            val result = BitmapFactory.decodeFile(myFile.path)
 
 //          FOR EMULATOR USER !
 //            val result = rotateBitmap(
@@ -84,7 +84,7 @@ class PreviewActivity : AppCompatActivity() {
             }
 
             previewViewModel.response.observe(this) {
-                if (it.error == true) {
+                if (it.error) {
                     Toast.makeText(
                         this@PreviewActivity,
                         it.message,

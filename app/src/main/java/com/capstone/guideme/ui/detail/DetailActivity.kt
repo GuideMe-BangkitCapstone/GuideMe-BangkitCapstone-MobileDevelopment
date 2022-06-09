@@ -18,6 +18,7 @@ import com.capstone.guideme.model.ListPhotoItem
 import com.capstone.guideme.utils.UserPreference
 import com.capstone.guideme.utils.ViewModelFactory
 import com.capstone.guideme.utils.showLoading
+import com.capstone.guideme.utils.toSlug
 
 
 class DetailActivity : AppCompatActivity() {
@@ -62,6 +63,15 @@ class DetailActivity : AppCompatActivity() {
             tvDetailPlaceName.text = place.name
             tvAddress.text = place.address
             tvDescription.text = place.description
+        }
+
+        binding.tvAddress.setOnClickListener {
+            val placeName = place.name.toSlug()
+            val intent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.google.com/maps/search/?api=1&query=$placeName")
+            )
+            startActivity(intent)
         }
     }
 
