@@ -50,7 +50,7 @@ interface ApiServices {
     ): Call<HistoryResponse>
 
     @Multipart
-    @POST("detection/dummy/guideme")
+    @POST("detection")
     fun detection(
         @Header("Authorization") token: String,
         @Part file: MultipartBody.Part
