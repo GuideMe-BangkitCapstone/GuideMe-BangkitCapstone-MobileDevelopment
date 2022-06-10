@@ -7,8 +7,7 @@ This application was built with the aim of helping tourists. tourists who want t
 * Download Apk : https://drive.google.com/file/d/1--gO0UqAYZr4XvqFUvUT19n5myS0M2hE/view?usp=sharing
 
 ### Screenshots
-![AppScreenshots](https://user-images.githubusercontent.com/69246482/173019784-1eee679d-8be9-4d88-9245-cddecc5a8ce7.png)
-
+![AppScreenshots](https://user-images.githubusercontent.com/69246482/173022423-0e84a266-ff01-40fd-97ca-3a03512e26d5.png)
 
 ## Development
 
