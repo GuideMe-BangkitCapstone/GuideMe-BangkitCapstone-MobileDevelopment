@@ -42,7 +42,10 @@ class CameraActivity : AppCompatActivity() {
 
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        binding.captureImage.setOnClickListener { takePhoto() }
+        binding.captureImage.setOnClickListener {
+            takePhoto()
+            binding.captureImage.isEnabled = false;
+        }
         binding.switchCamera.setOnClickListener {
             cameraSelector = if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA) CameraSelector.DEFAULT_FRONT_CAMERA
             else CameraSelector.DEFAULT_BACK_CAMERA
@@ -60,7 +63,7 @@ class CameraActivity : AppCompatActivity() {
             if (!allPermissionsGranted()) {
                 Toast.makeText(
                     this,
-                    "Tidak mendapatkan permission.",
+                    "Can't Get Permission",
                     Toast.LENGTH_SHORT
                 ).show()
                 finish()
@@ -95,7 +98,7 @@ class CameraActivity : AppCompatActivity() {
                 override fun onError(exc: ImageCaptureException) {
                     Toast.makeText(
                         this@CameraActivity,
-                        "Gagal mengambil gambar.",
+                        "Failed",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
@@ -141,7 +144,7 @@ class CameraActivity : AppCompatActivity() {
             } catch (exc: Exception) {
                 Toast.makeText(
                     this@CameraActivity,
-                    "Gagal memunculkan kamera.",
+                    "Filed to launch camera",
                     Toast.LENGTH_SHORT
                 ).show()
             }

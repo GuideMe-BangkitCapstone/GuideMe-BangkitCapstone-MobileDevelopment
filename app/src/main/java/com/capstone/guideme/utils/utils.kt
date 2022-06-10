@@ -61,7 +61,7 @@ fun rotateBitmap(bitmap: Bitmap, isBackCamera: Boolean = false): Bitmap {
 fun reduceFileImage(file: File): File {
     val bitmap = BitmapFactory.decodeFile(file.path)
 
-    var compressQuality = 100
+    var compressQuality = 20
     var streamLength: Int
 
     do {
@@ -69,7 +69,7 @@ fun reduceFileImage(file: File): File {
         bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, bmpStream)
         val bmpPicByteArray = bmpStream.toByteArray()
         streamLength = bmpPicByteArray.size
-        compressQuality -= 5
+        compressQuality -= 15
     } while (streamLength > 1000000)
 
     bitmap.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))

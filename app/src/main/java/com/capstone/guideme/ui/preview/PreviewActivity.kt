@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,7 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
+
 class PreviewActivity : AppCompatActivity() {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
     private lateinit var previewViewModel: PreviewViewModel
@@ -35,7 +37,10 @@ class PreviewActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         startCameraX()
-        binding.btnScan.setOnClickListener { uploadImage() }
+        binding.btnScan.setOnClickListener {
+            uploadImage()
+            binding.btnScan.isEnabled = false
+        }
     }
 
     private fun startCameraX() {
@@ -63,6 +68,7 @@ class PreviewActivity : AppCompatActivity() {
         }
     }
 
+    @Suppress("DEPRECATION")
     private fun uploadImage() {
         if (getFile != null) {
             val file = reduceFileImage(getFile as File)
@@ -90,12 +96,15 @@ class PreviewActivity : AppCompatActivity() {
                         it.message,
                         Toast.LENGTH_SHORT
                     ).show()
+                    Handler().postDelayed({ finish() }, 2000)
+                    getFile = null
                 } else {
                     Intent(this@PreviewActivity, DetailActivity::class.java).apply {
                         putExtra(DetailActivity.EXTRA_NAME, it.placeName)
                         startActivity(this)
                     }
                     finish()
+                    getFile = null
                 }
             }
         }

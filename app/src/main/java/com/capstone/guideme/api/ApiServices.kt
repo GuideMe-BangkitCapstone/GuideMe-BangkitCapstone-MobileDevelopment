@@ -6,6 +6,7 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiServices {
+
     @FormUrlEncoded
     @POST("auth/register")
     fun signUp(

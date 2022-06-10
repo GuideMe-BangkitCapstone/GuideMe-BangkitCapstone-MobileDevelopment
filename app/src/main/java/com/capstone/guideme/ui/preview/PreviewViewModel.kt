@@ -42,6 +42,11 @@ class PreviewViewModel(private val pref: UserPreference) : ViewModel() {
                     _response.value = response.body()
                 } else {
                     _isLoading.value = false
+                    _response.value = DetectionResponse(
+                        null,
+                        true,
+                        "Error while uploading Photo, please try again"
+                    )
                     Log.e("AddStoryActivity", "onFailure: ${response.message()}")
                 }
             }
