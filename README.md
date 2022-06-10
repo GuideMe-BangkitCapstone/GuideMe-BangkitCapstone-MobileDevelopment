@@ -17,7 +17,8 @@ This application was built with the aim of helping tourists. tourists who want t
 #### Dependencies
 ```Gradle
 dependencies {
-    // ViewModel & LiveData
+    // ViewModel, LiveData, & DataStore
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
     // Retrofit
