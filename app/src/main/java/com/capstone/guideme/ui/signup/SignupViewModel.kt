@@ -30,11 +30,6 @@ class SignupViewModel : ViewModel() {
                     _response.value = response.body()
                 } else {
                     _isLoading.value = false
-                    _response.value =
-                        SignupResponse(
-                            response.body()!!.error,
-                            response.body()!!.message
-                        )
                     Log.e(TAG, "onFailure: ${response.message()}")
                 }
             }

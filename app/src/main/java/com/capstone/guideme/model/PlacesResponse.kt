@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 data class PlacesResponse(
 
 	@field:SerializedName("listPlaces")
-	val listPlaces: List<ListPlacesItem>? = null,
+	val listPlaces: List<ListPlacesItem>,
 
 	@field:SerializedName("error")
 	val error: Boolean,

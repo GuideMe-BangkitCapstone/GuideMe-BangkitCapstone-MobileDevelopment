@@ -10,7 +10,6 @@ import com.capstone.guideme.model.DetectionResponse
 import com.capstone.guideme.model.User
 import com.capstone.guideme.utils.UserPreference
 import okhttp3.MultipartBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -43,17 +42,17 @@ class PreviewViewModel(private val pref: UserPreference) : ViewModel() {
                     _response.value = response.body()
                 } else {
                     _isLoading.value = false
-                    _response.value =
-                        DetectionResponse(
-                            null,
-                            response.body()!!.error,
-                            response.body()!!.message
-                        )
                     Log.e("AddStoryActivity", "onFailure: ${response.message()}")
                 }
             }
 
             override fun onFailure(call: Call<DetectionResponse>, t: Throwable) {
+                _response.value =
+                    DetectionResponse(
+                        null,
+                        true,
+                        t.message.toString()
+                    )
                 Log.e("PreviewViewModel", "onFailure: ${t.message.toString()}")
             }
         })
