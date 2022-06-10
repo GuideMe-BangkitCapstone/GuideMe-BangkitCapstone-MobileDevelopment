@@ -43,12 +43,11 @@ class PreviewViewModel(private val pref: UserPreference) : ViewModel() {
                     _response.value = response.body()
                 } else {
                     _isLoading.value = false
-                    val jsonObject = JSONObject(response.errorBody()!!.charStream().readText())
                     _response.value =
                         DetectionResponse(
                             null,
-                            jsonObject.getBoolean("error"),
-                            jsonObject.getString("message")
+                            response.body()!!.error,
+                            response.body()!!.message
                         )
                     Log.e("AddStoryActivity", "onFailure: ${response.message()}")
                 }

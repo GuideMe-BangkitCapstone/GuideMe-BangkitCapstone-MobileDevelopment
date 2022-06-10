@@ -1,11 +1,15 @@
 package com.capstone.guideme.ui.profile
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.capstone.guideme.databinding.ItemRowHistoryBinding
 import com.capstone.guideme.model.ListHistoryItem
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ListHistoryAdapter(private val histories: ArrayList<ListHistoryItem>) :
     RecyclerView.Adapter<ListHistoryAdapter.ListViewHolder>() {
@@ -17,7 +21,7 @@ class ListHistoryAdapter(private val histories: ArrayList<ListHistoryItem>) :
             ItemRowHistoryBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
         return ListViewHolder(binding)
     }
-
+    
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val history = histories[position]
 
@@ -25,6 +29,7 @@ class ListHistoryAdapter(private val histories: ArrayList<ListHistoryItem>) :
             .load(history.photoUrl)
             .into(holder.binding.imgItemPhoto)
         holder.binding.tvNamePlace.text = history.name
+        holder.binding.tvDate.text= history.createdAt
         holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(history) }
     }
 

@@ -11,5 +11,5 @@ data class DetectionResponse(
 	val error: Boolean,
 
 	@field:SerializedName("message")
-	val message: String? = null
+	val message: String
 )

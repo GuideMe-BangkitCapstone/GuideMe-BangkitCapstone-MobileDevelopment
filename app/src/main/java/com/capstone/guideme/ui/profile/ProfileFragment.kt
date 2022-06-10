@@ -2,6 +2,7 @@ package com.capstone.guideme.ui.profile
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -96,6 +97,7 @@ class ProfileFragment : Fragment() {
         })
     }
 
+    @Suppress("DEPRECATION")
     private fun deleteHistory(token: String){
         profileViewModel.deleteVisitHistory(token)
         profileViewModel.deleteResponse.observe(viewLifecycleOwner){
@@ -104,6 +106,12 @@ class ProfileFragment : Fragment() {
                 it.message,
                 Toast.LENGTH_SHORT
             ).show()
+        }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            fragmentManager?.beginTransaction()?.detach(this)?.commitNow();
+            fragmentManager?.beginTransaction()?.attach(this)?.commitNow();
+        } else {
+            fragmentManager?.beginTransaction()?.detach(this)?.attach(this)?.commit();
         }
     }
 
