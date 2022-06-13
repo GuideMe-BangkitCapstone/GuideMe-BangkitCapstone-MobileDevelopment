@@ -14,7 +14,8 @@ Download Apk : https://drive.google.com/file/d/1d18TdwcqjPboeGddC072SOnPPA24VIjC
 <b>In the future we will update so that it can be used for other historical tourist attractions.</b>
 
 ### Screenshots
-![AppScreenshots](https://user-images.githubusercontent.com/69246482/173022423-0e84a266-ff01-40fd-97ca-3a03512e26d5.png)
+![AppScreenshots](https://user-images.githubusercontent.com/69246482/173273173-a67a42df-7e6d-4dc3-9dbc-ebd3d3c44225.png)
+
 
 ## Development
 
