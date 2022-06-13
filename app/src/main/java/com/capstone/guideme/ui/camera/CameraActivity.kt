@@ -44,7 +44,7 @@ class CameraActivity : AppCompatActivity() {
 
         binding.captureImage.setOnClickListener {
             takePhoto()
-            binding.captureImage.isEnabled = false;
+            binding.captureImage.isEnabled = false
         }
         binding.switchCamera.setOnClickListener {
             cameraSelector = if (cameraSelector == CameraSelector.DEFAULT_BACK_CAMERA) CameraSelector.DEFAULT_FRONT_CAMERA

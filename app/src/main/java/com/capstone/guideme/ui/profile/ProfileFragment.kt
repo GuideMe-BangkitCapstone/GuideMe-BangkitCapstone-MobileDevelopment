@@ -108,10 +108,10 @@ class ProfileFragment : Fragment() {
             ).show()
         }
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            fragmentManager?.beginTransaction()?.detach(this)?.commitNow();
-            fragmentManager?.beginTransaction()?.attach(this)?.commitNow();
+            fragmentManager?.beginTransaction()?.detach(this)?.commitNow()
+            fragmentManager?.beginTransaction()?.attach(this)?.commitNow()
         } else {
-            fragmentManager?.beginTransaction()?.detach(this)?.attach(this)?.commit();
+            fragmentManager?.beginTransaction()?.detach(this)?.attach(this)?.commit()
         }
     }
 

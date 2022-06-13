@@ -25,10 +25,6 @@ class DetailViewModel(private val pref: UserPreference) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun getUser(): LiveData<User> {
-        return pref.getUser().asLiveData()
-    }
-
     internal fun getDetailPlace(name: String) {
         _isLoading.value = true
         val client = ApiConfig.getApiService().getDetailPlaces(name)
